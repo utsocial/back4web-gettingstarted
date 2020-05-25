@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="Back4App Inc" name="author">
+
+  <title>Sample App| JavaScript Quickstart | Back4App</title>
+  
+  <!-- Here goes the Parse SDK for JavaScript -->
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
+</head>
+
+<body>
+  <div>
+    <header>
+      <!-- Add your header image here -->
+    </header>
+
+    <h3>Hello World!</h3>
+    <!-- Add your content here -->
+    <p>
+        From: <a href="https://www.back4app.com/docs/javascript/parse-javascript-sdk" target="_blank"> https://www.back4app.com/docs/javascript/parse-javascript-sdk </a>
+
+    </p>
+    <input type="text" id="username" name="username" value="indexhtmlusername"><br><br>
+    <input type="text" id="email" name="email" value="emailindexhtml@gmail.com"><br><br>
+    <input type="text" id="password" name="password" value="123"><br><br>
+
+    <script>
+      // PASTE YOUR TEST CODE HERE
+      Parse.initialize("M3jokCN5chilMFIM6w7itlkxW9dQC8unFBOpNVc0", "31UE6yxwvgzgDNGbkvdBp49eSFUhwFdOiks5l2OI"); 
+      Parse.serverURL = "https://parseapi.back4app.com/";
+
+        var user = new Parse.User();
+        user.save({
+           username: document.getElementById("username").value,
+           email: document.getElementById("email").value,
+           password: document.getElementById("password").value
+        }).then(function(response) {
+            alert('New object create with success! ObjectId: ' + response.id + ', '+ user.get('username'));
+        }).catch(function(error) {
+            alert('Error: ' + error.message);
+        });
+
+    </script>
+
+  </div>
+
+  <br><br><br>
+
+  <footer>
+    <!-- Add your footer message/logo here -->
+  </footer>
+
+  <!-- Add your JS script here -->
+
+</body>
+
+</html>
